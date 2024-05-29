@@ -5,11 +5,11 @@ export const Typography: FC<
         component?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div';
         className?: string;
     }>
-> = ({ component = 'span', children }) => {
+> = ({ component = 'span', children, className }) => {
     return createElement(
         component,
         {
-            className: 'text-black'
+            ...(className ? { className } : {})
         },
         children
     );
